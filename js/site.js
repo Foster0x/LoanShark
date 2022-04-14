@@ -1,36 +1,34 @@
-// Sep One - controller/accepts requests
-function getMessage() {
-    let msg = document.getElementById("txtMessage").value;
+// Get the loan values from the page
+function getValues() {
+    // Step one-get values from page
 
-    // Check for empty string
-    if (msg == '') {
-        alert("You must enter a string!");
-    } else {
-        msg = msg.toLowerCase();
-        let revMessage = reverseMessageA(msg);
-        displayMessage(revMessage);
+    // Step two-calculate payment
+
+    // Call buildSchedule
+    let payments = buildSchedule(amount, rate, term, payment);
+
+    // Call displayData
+    displayData(payments);
+}
+
+// Builds amorization schedule
+function buildSchedule(amount, rate, term, payment) {
+    let payments = [];
+
+    let curPayment = {
+        month: 0,
+        payment: 0,
+        principle: 0,
+        interest: 0,
+        totalInterest: 0,
+        balance: 0
     }
+
+    // Return an array of payment objects
+    return payments;
 }
 
-// Business Logic Layer
-function reverseMessageA(msg) {
-    let revMessage = "";
-    // Decrimenting loop
-    for (let index = msg.length - 1; index >= 0; index--) {
-        let char = msg[index];
-        revMessage += char;
-    }
-    return revMessage;
-}
+// Display the table of payments and summary info at top of page
+function displayData() {
 
-function reverseMessageB(msg) {
-    let revMessage = "";
-    revMessage = msg.split("").reverse().join("");
-    return revMessage;
-}
-
-// Final Step - View
-function displayMessage(message) {
-    element = document.getElementById("results");
-    element.innerHTML = message;
 }

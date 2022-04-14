@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Reverse A String: Coding Challenge by Stephen Foster</title>
+    <title>Loan Shark: Coding Challenge by Stephen Foster</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,8 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"><img src="/img/typingbgdark.png" height="50" width="150"> Reverse A String</a>
+            <a class="navbar-brand" href="/index.html"><img src="/img/typingbgdark.png" height="50" width="150"> Loan
+                Shark</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,25 +55,90 @@
 
     <main class="flex-shrink-0">
         <div class="container mt-5">
-            <h1 class="text-center">Reverse A String</h1>
-            <h4>There and back again. A javascript coding exercise using arrays. A program that displays a string in reverse.</h4>
-            <hr>
-            <p>Enter a message and hit the button. The program prints the message in reverse.</p>
-            <hr>
-            <div class="row align-items-end mt-2">
-                <div class="col">
-                    <label for="txtMessage" class="form-label"></label>
-                    <input type="text" name="txtMessage" class="form-control" id="txtMessage"
-                        placeholder="Enter Message">
+            <h1>Loan Calculator</h1>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="card p-2">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="loanAmount">Loan Amount:</label>
+                                    <input type="number" name="" id="loanAmount" class="form-control"
+                                        placeholder="Loan Amount" value="15000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="payments">Payments:</label>
+                                    <input type="number" name="" id="payments" class="form-control"
+                                        placeholder="Payments" value="60">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="rate">Rate:</label>
+                                    <input type="number" step="0.1" name="" id="rate" class="form-control"
+                                        placeholder="Rate" value="3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex">
+                                <button type="button" class="btn btn-secondary mt-2" id="btnSubmit">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col">
-                    <button id="btnSubmit" class="btn btn-primary">Reverse Me!</button>
+                <div class="col-12 col-md-6">
+                    <div class="card p-2">
+                        <div class="row mt-2">
+                            <div class="col text-center">
+                                <h3 id="monthlyPayment">Your Monthly Payments:</h3>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row" class="" id="totalPrincipal">Total Principal:</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" class="" id="totalInterest">Total Interest:</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" class="" id="totalCost">Total Cost:</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="messageStyle mt-5">
-                <div id="results" class="">
-                    <!--My items will go here  -->
-                    
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped" id="tableData">
+                        <thead>
+                            <tr>
+                                <th>Month</th>
+                                <th>Payment</th>
+                                <th>Principal</th>
+                                <th>Interest</th>
+                                <th>Total Interest</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                            <!-- Data goes here -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -111,7 +177,7 @@
     <!-- Custom JS -->
     <script src="/js/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", getMessage);
+        document.getElementById("btnSubmit").addEventListener("click", buildSchedule);
     </script>
 
 </body>
