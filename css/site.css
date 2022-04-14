@@ -1,0 +1,57 @@
+:root {
+    --cf-dark-color: #292929;
+    --cf-light-color: #DFE3E4;
+    --cf-primary-color: #001E43;
+    --cf-secondary-color: #69caf7;
+}
+
+body {
+    color: var(--cf-dark-color);
+    font-size: 1rem;
+    background-color: var(--cf-light-color);
+}
+
+nav {
+    background-color: var(--cf-dark-color);
+}
+
+main>.container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+
+.sticky-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--cf-dark-color);
+}
+
+.socialIcons>a {
+    color: var(--cf-light-color);
+    font-size: 1.5rem;
+}
+
+.socialIcons>a:hover {
+    color: var(--cf-secondary-color);
+}
+
+.checklist {
+    list-style: none;
+}
+
+.checklist i {
+    color: var(--cf-secondary-color);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.techIcons {
+    font-size: 4rem;
+}
+
+.messageStyle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}

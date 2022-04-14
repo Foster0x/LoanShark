@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <title>Reverse A String: Coding Challenge by Stephen Foster</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!--Add a Favicon-->
+    <link rel="icon" href="/img/SF-favicon2.ico" type="image/x-icon">
+
+    <!-- Dev Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <!-- Custom CSS -->
+    <link href="/css/site.css" rel="stylesheet">
+    <link href="/css/prism.css" rel="stylesheet">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html"><img src="/img/typingbgdark.png" height="50" width="150"> Reverse A String</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app.html">The App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-shrink-0">
+        <div class="container mt-3">
+            <h1>The Code for Reverse A String</h1>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            // Sep One - controller/accepts requests
+                            function getMessage() {
+                                let msg = document.getElementById("txtMessage").value;
+                                // Check for empty string
+                                if (msg == '') {
+                                    alert("You must enter a string!");
+                                } else {
+                                    let revMessage = reverseMessageA(msg);
+                                    displayMessage(revMessage);
+                                }
+                            }
+                            // Business Logic Layer
+                            function reverseMessageA(msg) {
+                                let revMessage = "";
+                                // Decrimenting loop
+                                for (let index = msg.length - 1; index >= 0; index--) {
+                                    let char = msg[index];
+                                    revMessage += char;
+                                }
+                                return revMessage;
+                            }
+                            // Final Step - View
+                            function displayMessage(message) {
+                                element = document.getElementById("results");
+                                element.innerHTML = message;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h1>The code is structured in two functions:</h1>
+                    <h4>getMessage</h4>
+                    <p>Gets a string from the user</p>
+                    <h4>displayMessage</h4>
+                    <p>Displays the string in reverse on the page</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-dark sticky-footer text-light">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-lg-3 gy-2">
+                <div class="col order-last order-lg-first">
+                    <span>&copy; 2022</span> Stephen Foster | sfoster2010.sf@gmail.com
+                </div>
+                <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
+                    <img src="/img/typingbgdark.png" height="50" width="150">
+                </div>
+                <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
+                    <div class="row">
+                        <div class="col socialIcons">
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                        <div class="col socialIcons">
+                            <a href="#"><i class="bi bi-github"></i></a>
+                        </div>
+                        <div class="col socialIcons">
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="/js/prism.js"></script>
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
+    </script>
+
+</body>
+
+</html>
