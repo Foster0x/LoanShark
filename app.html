@@ -53,96 +53,78 @@
         </div>
     </nav>
 
-    <main class="flex-shrink-0">
-        <div class="container mt-5">
-            <h1>Loan Calculator</h1>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="card p-2">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="loanAmount">Loan Amount:</label>
-                                    <input type="number" name="" id="loanAmount" class="form-control"
-                                        placeholder="Loan Amount" value="15000">
-                                </div>
-                            </div>
+    <div class="container mt-5">
+        <H1 class="mt-5">Loan Calculator</H1>
+        <div class="row">
+            <div class="col loanForm">
+                <form>
+                    <div class="form-row row-cols-1">
+                        <div class="form-group col">
+                            <label for="lamount">Loan Amount:</label>
+                            <input type="number" class="form-control" id="lamount" min="1000" step="500" value=15000
+                                name="lamount">
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="payments">Payments:</label>
-                                    <input type="number" name="" id="payments" class="form-control"
-                                        placeholder="Payments" value="60">
-                                </div>
-                            </div>
+                        <div class="form-group col">
+                            <label for="lterm">Loan Term In Months:</label>
+                            <input type="number" class="form-control" id="lterm" min="1" value=60 name="lterm">
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="rate">Rate:</label>
-                                    <input type="number" step="0.1" name="" id="rate" class="form-control"
-                                        placeholder="Rate" value="3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col d-flex">
-                                <button type="button" class="btn btn-secondary mt-2" id="btnSubmit">Calculate</button>
-                            </div>
+                        <div class="form-group col">
+                            <label for="lrate">Rate:</label>
+                            <input type="number" class="form-control" id="lrate" min="1" value=3 step=".1" name="lrate">
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="card p-2">
-                        <div class="row mt-2">
-                            <div class="col text-center">
-                                <h3 id="monthlyPayment">Your Monthly Payments:</h3>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row mt-2">
-                            <div class="col">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td scope="row" class="" id="totalPrincipal">Total Principal:</td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row" class="" id="totalInterest">Total Interest:</td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row" class="" id="totalCost">Total Cost:</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <button type="button" onclick="buildSchedule()" class="btn btn-secondary mt-2">Calculate</button>
+                </form>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col">
-                    <table class="table table-striped" id="tableData">
-                        <thead>
-                            <tr>
-                                <th>Month</th>
-                                <th>Payment</th>
-                                <th>Principal</th>
-                                <th>Interest</th>
-                                <th>Total Interest</th>
-                                <th>Balance</th>
-                            </tr>
-                        </thead>
-                        <tbody id="resultsBody">
-                            <!-- Data goes here -->
-                        </tbody>
-                    </table>
+            <div class="col loanInfo">
+                <div id="paymentTitle">
+                    <p><strong>Your Monthly Payments:</strong></p>
+                </div>
+                <p id="payment">
+
+                </p>
+                <div class="row row-cols-2">
+                    <div class="col mt-3">
+                        <label class="text-left"><strong>Total Principal:</strong></label>
+                    </div>
+                    <div class="col text-right" id="totalPrincipal">
+
+                    </div>
+                    <div class="col text-left mt-4">
+                        <label><strong>Total Interest:</strong></label><br>
+                    </div>
+                    <div class="col text-right" id="totalInterest">
+
+                    </div>
+                    <div class="col text-left mt-4">
+                        <label><strong>Total Cost:</strong></label>
+                    </div>
+                    <div class="col text-right" id="totalCost">
+
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+        <div class="row">
+            <div class="col">
+                <table id="scheduleTable" class="table table-striped table-hover">
+                    <thead id="tableheader" class="text-dark">
+                        <tr>
+                            <th>Month</th>
+                            <th>Payment</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Total Interest</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody">
+                        <!--template data-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer mt-auto py-3 bg-dark sticky-footer text-light">
         <div class="container-fluid">
@@ -169,6 +151,18 @@
             </div>
         </div>
     </footer>
+
+    <template id="scheduleTemplate">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
@@ -176,9 +170,6 @@
 
     <!-- Custom JS -->
     <script src="/js/site.js"></script>
-    <script>
-        document.getElementById("btnSubmit").addEventListener("click", buildSchedule);
-    </script>
 
 </body>
 
