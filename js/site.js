@@ -8,6 +8,7 @@ function calcInterest(balance, rate) {
     return balance * rate;
 }
 
+// Get values from the user
 function buildSchedule() {
     const loanAmount = Number(document.getElementById("lamount").value);
     let rate = parseFloat(document.getElementById("lrate").value);
@@ -112,3 +113,6 @@ function displayData(paymentDS) {
         currency: "USD",
     });
 }
+
+
+

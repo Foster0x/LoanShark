@@ -54,7 +54,7 @@
     </nav>
 
     <div class="container mt-5">
-        <H1 class="mt-5">Loan Calculator</H1>
+        <h1 class="mt-5">Loan Calculator</h1>
         <div class="row">
             <div class="col loanForm">
                 <form>
@@ -73,34 +73,34 @@
                             <input type="number" class="form-control" id="lrate" min="1" value=3 step=".1" name="lrate">
                         </div>
                     </div>
-                    <button type="button" onclick="buildSchedule()" class="btn btn-secondary mt-2">Calculate</button>
+                    <button id="btnSubmit" type="button" onclick="buildSchedule()" class="btn btn-secondary mt-2">Calculate</button>
                 </form>
             </div>
             <div class="col loanInfo">
                 <div id="paymentTitle">
-                    <p><strong>Your Monthly Payments:</strong></p>
+                    <p class="text-center display-5"><strong>Your Monthly Payment:</strong></p>
                 </div>
-                <p id="payment" class="text-right">
-
+                <p id="payment" class="text-center display-5">
+                    $0.00
                 </p>
                 <div class="row row-cols-2">
                     <div class="col text-left mt-3">
                         <label><strong>Total Principal:</strong></label>
                     </div>
-                    <div class="col text-right mt-3" id="totalPrincipal">
-
+                    <div class="col text-end mt-3" id="totalPrincipal">
+                        $0.00
                     </div>
                     <div class="col text-left mt-3">
                         <label><strong>Total Interest:</strong></label>
                     </div>
-                    <div class="col text-right mt-3" id="totalInterest">
-
+                    <div class="col text-end mt-3" id="totalInterest">
+                        $0.00
                     </div>
                     <div class="col text-left mt-3">
                         <label><strong>Total Cost:</strong></label>
                     </div>
-                    <div class="col text-right mt-3" id="totalCost">
-
+                    <div class="col text-end mt-3" id="totalCost">
+                        $0.00
                     </div>
                 </div>
             </div>
@@ -154,12 +154,12 @@
 
     <template id="scheduleTemplate">
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-id="Month"></td>
+            <td data-id="Payment"></td>
+            <td data-id="Principal"></td>
+            <td data-id="Interest"></td>
+            <td data-id="TotalInterest"></td>
+            <td data-id="Balance"></td>
         </tr>
     </template>
 
@@ -170,6 +170,10 @@
 
     <!-- Custom JS -->
     <script src="/js/site.js"></script>
+
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", buildSchedule);
+    </script>
 
 </body>
 

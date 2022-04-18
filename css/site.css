@@ -55,3 +55,17 @@ main>.container {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.loanForm {
+    background: white;
+    border-radius: 15px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* .loanInfo { 
+        background: white;
+    border-radius: 15px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
