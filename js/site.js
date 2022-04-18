@@ -88,7 +88,7 @@ function displayData(paymentDS) {
     // Total interest is in the last row of array
     let totalInterest = paymentDS.summary.totalInterest;
     let payment = paymentDS.summary.payment;
-    let loanAmount = paymentDS.summary.totalPrincipall
+    let loanAmount = paymentDS.summary.totalPrincipal
     let totalCost = paymentDS.summary.totalCost;
     // Build summary area
     let labelPrincipal = document.getElementById("totalPrincipal");
